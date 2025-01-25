@@ -16,7 +16,7 @@ export const handleWeatherByGeolocation = () => {
     const result = await response.json();
 
     const weather = await getWeatherData(result.features[0].properties.city);
-    resetWeatherContent(features[0].properties.city, weather);
+    resetWeatherContent(result.features[0].properties.city, weather);
     console.log(result);
   };
 
