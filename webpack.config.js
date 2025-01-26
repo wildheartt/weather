@@ -1,25 +1,43 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './js/index.js', // ????
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true,
+    publicPath: '/',
   },
+  mode: 'development',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'), // здесь лежит ваш index.html
+      directory: path.join(__dirname, 'public'),
     },
-    port: 3000,
+    compress: true,
+    port: 8080,
+    historyApiFallback: true,
     open: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
