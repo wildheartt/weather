@@ -19,5 +19,4 @@ module.exports = {
     },
   },
   coveragePathIgnorePatterns: ['/node_modules/', 'js/geolocation.js'],
-  
 };

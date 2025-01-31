@@ -14,7 +14,7 @@ export default [
       'coverage',
       'eslint.config.js',
       'stylelint.config.js',
-      '.github',
+      '.github/**',
     ],
   },
 
