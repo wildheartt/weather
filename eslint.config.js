@@ -39,7 +39,7 @@ export default [
 
   {
     files: [
-      'jest.config.js',
+      'jest.config.cjs',
       'webpack.config.js',
       'babel.config.js',
       'vite.config.js',

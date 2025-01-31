@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,56 +93,56 @@
 <a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { getWeatherData } from './api.js';
 import { resetWeatherContent } from './helper.js';
 &nbsp;
-export const handleWeatherByGeolocation = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-  const options = <span class="cstat-no" title="statement not covered" >{</span>
+export const handleWeatherByGeolocation = () =&gt; {
+  const options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumageAge: 0,
   };
-  const success = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync (pos) =&gt; {</span>
-    const crd = <span class="cstat-no" title="statement not covered" >pos.coords;</span>
+  const success = async (pos) =&gt; {
+    const crd = pos.coords;
 &nbsp;
-    const response = <span class="cstat-no" title="statement not covered" >await fetch(</span>
-      `https://api.geoapify.com/v1/geocode/reverse?lat=${crd.latitude}&amp;lon=${crd.longitude}&amp;apiKey=a31b273f8aaa4af6848ef7a73cb7c3dc`,
+    const response = await fetch(
+      `https://api.geoapify.com/v1/geocode/reverse?lat=${crd.latitude}&amp;lon=${crd.longitude}&amp;apiKey=a31b273f8aaa4af6848ef7a73cb7c3dc`
     );
-    const result = <span class="cstat-no" title="statement not covered" >await response.json();</span>
+    const result = await response.json();
 &nbsp;
-    const weather = <span class="cstat-no" title="statement not covered" >await getWeatherData(result.features[0].properties.city);</span>
-<span class="cstat-no" title="statement not covered" >    resetWeatherContent(result.features[0].properties.city, weather);</span>
-<span class="cstat-no" title="statement not covered" >    console.log(result);</span>
+    const weather = await getWeatherData(result.features[0].properties.city);
+    resetWeatherContent(result.features[0].properties.city, weather);
+    console.log(result);
   };
 &nbsp;
-  const error = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    console.log(error.code + '' + error.message);</span>
+  const error = (error) =&gt; {
+    console.log(error.code + '' + error.message);
   };
-<span class="cstat-no" title="statement not covered" >  navigator.geolocation.getCurrentPosition(success, error, options);</span>
+  navigator.geolocation.getCurrentPosition(success, error, options);
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -151,7 +151,7 @@ export const handleWeatherByGeolocation = <span class="fstat-no" title="function
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-26T12:54:11.761Z
+                at 2025-01-31T19:35:09.388Z
             </div>
         <script src="prettify.js"></script>
         <script>
