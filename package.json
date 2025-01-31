@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.cjs --mode production",
     "format": "prettier --write .",
     "test": "jest --coverage",
     "lint": " eslint .",

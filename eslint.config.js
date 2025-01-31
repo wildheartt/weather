@@ -40,9 +40,8 @@ export default [
   {
     files: [
       'jest.config.cjs',
-      'webpack.config.js',
+      'webpack.config.cjs',
       'babel.config.js',
-      'vite.config.js',
       'eslint.config.js',
     ],
     languageOptions: {
