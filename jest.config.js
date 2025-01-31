@@ -1,4 +1,12 @@
 module.exports = {
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+  globals: {
+    'babel-jest': {
+      useESM: true,
+    },
+  },
   testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
   coverageDirectory: 'coverage',
@@ -11,4 +19,5 @@ module.exports = {
     },
   },
   coveragePathIgnorePatterns: ['/node_modules/', 'js/geolocation.js'],
+  
 };
