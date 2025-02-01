@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1738352939868" clover="3.2.0">
-  <project timestamp="1738352939868" name="All files">
+<coverage generated="1738411626081" clover="3.2.0">
+  <project timestamp="1738411626081" name="All files">
     <metrics statements="186" coveredstatements="157" conditionals="34" coveredconditionals="25" methods="19" coveredmethods="17" elements="239" coveredelements="199" complexity="0" loc="186" ncloc="186" packages="1" files="5" classes="5"/>
     <file name="api.js" path="/Users/wildheartt/weatheryt/weather/src/api.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
