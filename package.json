@@ -45,5 +45,8 @@
     "hooks": {
       "pre-commit": "npm run lint && npm run test"
     }
+  },
+  "dependencies": {
+    "knit": "^0.1.0"
   }
 }
