@@ -11,7 +11,7 @@
     "test": "jest --coverage",
     "lint": " eslint .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "bug-fixing -d dist",
     "prepare": "husky install"
   },
   "devDependencies": {
