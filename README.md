@@ -35,3 +35,7 @@
 4. **`appHeader.js`, `appContent.js`** — Отдельные компоненты интерфейса.
 5. **`helper.js`** — Вспомогательные функции (конвертация C/F, ветры, reset контента и т.д.).
 6. **`__tests__/`** — Директория с Jest-тестами.
+
+[![Tests](https://github.com/wildheartt/weather/blob/bug-fixing/.github/workflows/ci.yml)](https://wildheartt.github.io/weather/)
+[![Lint](https://github.com/wildheartt/weather/blob/bug-fixing/.github/workflows/lint.yml)](https://wildheartt.github.io/weather/)
+[![Pages](https://github.com/wildheartt/weather/blob/bug-fixing/.github/workflows/deploy.yml)](https://wildheartt.github.io/weather/)
