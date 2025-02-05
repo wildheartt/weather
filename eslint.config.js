@@ -15,6 +15,10 @@ export default [
       'eslint.config.js',
       'stylelint.config.js',
       '.github/**',
+      '*.woff',
+      '*.woff2',
+      '**/*.png',
+      '**/*.jpg',
     ],
   },
 
