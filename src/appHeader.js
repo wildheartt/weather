@@ -53,7 +53,7 @@ export const createHeader = (city) => {
 
   searchBtn.addEventListener('click', async () => {
     if (!searchInput.value) {
-      showError('Введите название города!'); //добавил
+      showError('Введите название города!');
       return;
     }
 
@@ -67,7 +67,7 @@ export const createHeader = (city) => {
 
       resetWeatherContent(weather.name, weather);
     } catch (error) {
-      howError('Не удалось загрузить данные. Попробуйте ещё раз.'); //от себя
+      showError('Не удалось загрузить данные. Попробуйте ещё раз.');
       console.log(error);
     }
   });

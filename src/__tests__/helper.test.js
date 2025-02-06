@@ -1,4 +1,3 @@
-
 import {
   directionOfwWind,
   capitalizeFirstLetter,
@@ -15,7 +14,6 @@ describe('helper.js', () => {
     document.body.innerHTML = '';
     localStorage.clear();
 
-   
     jest.restoreAllMocks();
   });
 
@@ -81,7 +79,7 @@ describe('helper.js', () => {
     test('преобразует градусы C в F', () => {
       expect(cToF(0)).toBe(32);
       expect(cToF(100)).toBe(212);
-      expect(cToF(-40)).toBe(-40); 
+      expect(cToF(-40)).toBe(-40);
     });
   });
 
@@ -89,13 +87,12 @@ describe('helper.js', () => {
     test('преобразует градусы F в C', () => {
       expect(fToC(32)).toBe(0);
       expect(fToC(212)).toBe(100);
-      expect(fToC(-40)).toBe(-40); 
+      expect(fToC(-40)).toBe(-40);
     });
   });
 
   describe('resetWeatherContent', () => {
     test('перерисовывает body и сохраняет город в localStorage', () => {
-
       jest.spyOn(appHeader, 'createHeader').mockImplementation((city) => {
         const header = document.createElement('header');
         header.textContent = `Header for ${city}`;
