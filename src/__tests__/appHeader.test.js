@@ -2,7 +2,7 @@ import { createHeader } from '../appHeader.js';
 
 jest.mock('../api.js', () => ({
   getWeatherData: jest.fn(() =>
-    Promise.resolve({ main: { temp: 12 }, name: 'MockCity' }),
+    Promise.resolve({ main: { temp: 12 }, name: 'MockCity' })
   ),
 }));
 
