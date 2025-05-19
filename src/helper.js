@@ -1,5 +1,6 @@
 import { createContent } from './appContent.js';
 import { createHeader } from './appHeader.js';
+import EventBus from './EventBus.js';
 
 export const directionOfwWind = (degree) => {
   if (degree > 337.5) {
@@ -48,3 +49,7 @@ export const resetWeatherContent = (city, weather) => {
   const content = createContent(weather);
   document.body.append(header, content);
 };
+
+EventBus.on('weather:update', ({ city, weather }) => {
+  resetWeatherContent(city, weather);
+});

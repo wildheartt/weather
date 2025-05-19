@@ -1,6 +1,7 @@
 import { getWeatherData } from './api.js';
 import { handleWeatherByGeolocation } from './geolocation.js';
-import { cToF, fToC, resetWeatherContent } from './helper.js';
+import { cToF, fToC } from './helper.js';
+import EventBus from './EventBus.js';
 
 export const createHeader = (city) => {
   const header = document.createElement('header');
@@ -65,7 +66,7 @@ export const createHeader = (city) => {
         return;
       }
 
-      resetWeatherContent(weather.name, weather);
+      EventBus.emit('weather:update', { city: weather.name, weather });
     } catch (error) {
       showError('Не удалось загрузить данные. Попробуйте ещё раз.');
       console.log(error);

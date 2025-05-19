@@ -1,5 +1,6 @@
 import { getWeatherData } from './api.js';
-import { resetWeatherContent } from './helper.js';
+
+import EventBus from './EventBus.js';
 
 export const handleWeatherByGeolocation = () => {
   const options = {
@@ -16,7 +17,10 @@ export const handleWeatherByGeolocation = () => {
     const result = await response.json();
 
     const weather = await getWeatherData(result.features[0].properties.city);
-    resetWeatherContent(result.features[0].properties.city, weather);
+    EventBus.emit('weather:update', {
+      city: result.features[0].properties.city,
+      weather,
+    });
     console.log(result);
   };
 

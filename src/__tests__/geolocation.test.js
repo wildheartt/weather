@@ -3,7 +3,6 @@
  */
 import { handleWeatherByGeolocation } from '../geolocation.js';
 import { getWeatherData } from '../api.js';
-import { resetWeatherContent } from '../helper.js';
 
 jest.mock('../api.js', () => ({
   getWeatherData: jest.fn(),
@@ -58,10 +57,6 @@ describe('handleWeatherByGeolocation', () => {
       'https://api.geoapify.com/v1/geocode/reverse?lat=12.34&lon=56.78&apiKey=a31b273f8aaa4af6848ef7a73cb7c3dc'
     );
     expect(getWeatherData).toHaveBeenCalledWith('Test City');
-    expect(resetWeatherContent).toHaveBeenCalledWith(
-      'Test City',
-      'Mocked Weather Data'
-    );
     expect(consoleSpy).toHaveBeenCalledWith(mockGeoData);
 
     consoleSpy.mockRestore();
