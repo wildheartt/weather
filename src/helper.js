@@ -1,6 +1,6 @@
 import { createContent } from './appContent.js';
 import { createHeader } from './appHeader.js';
-import EventBus from './EventBus.js';
+import EventBus from './eventBus.js';
 
 export const directionOfwWind = (degree) => {
   if (degree > 337.5) {

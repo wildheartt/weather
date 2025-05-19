@@ -1,7 +1,7 @@
 import { getWeatherData } from './api.js';
 import { handleWeatherByGeolocation } from './geolocation.js';
 import { cToF, fToC } from './helper.js';
-import EventBus from './EventBus.js';
+import EventBus from './eventBus.js';
 
 export const createHeader = (city) => {
   const header = document.createElement('header');

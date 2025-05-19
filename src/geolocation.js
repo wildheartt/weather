@@ -1,6 +1,6 @@
 import { getWeatherData } from './api.js';
 
-import EventBus from './EventBus.js';
+import EventBus from './eventBus.js';
 
 export const handleWeatherByGeolocation = () => {
   const options = {
