@@ -56,23 +56,23 @@ export const createContent = (data) => {
   weatherInfoWind.append(
     createWeatherItemTitle('Ветер'),
     createWeatherItemContent(
-      data.wind.speed + ' м/с, ' + directionOfwWind(data.wind.deg),
-    ),
+      data.wind.speed + ' м/с, ' + directionOfwWind(data.wind.deg)
+    )
   );
 
   weatherInfoPressure.append(
     createWeatherItemTitle('Давление'),
-    createWeatherItemContent(data.main.pressure + ' мм рт. ст.'),
+    createWeatherItemContent(data.main.pressure + ' мм рт. ст.')
   );
 
   weatherInfoHumidity.append(
     createWeatherItemTitle('Влажность'),
-    createWeatherItemContent(data.main.humidity + ' %'),
+    createWeatherItemContent(data.main.humidity + ' %')
   );
 
   weatherInfoClouds.append(
     createWeatherItemTitle('Облачность'),
-    createWeatherItemContent(data.clouds.all + ' %'),
+    createWeatherItemContent(data.clouds.all + ' %')
   );
 
   main.append(section);
@@ -84,7 +84,7 @@ export const createContent = (data) => {
     weatherInfoWind,
     weatherInfoPressure,
     weatherInfoHumidity,
-    weatherInfoClouds,
+    weatherInfoClouds
   );
 
   return main;

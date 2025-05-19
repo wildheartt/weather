@@ -1,5 +1,6 @@
 import { getWeatherData } from './api.js';
-import { resetWeatherContent } from './helper.js';
+
+import EventBus from './eventBus.js';
 
 export const handleWeatherByGeolocation = () => {
   const options = {
@@ -11,12 +12,15 @@ export const handleWeatherByGeolocation = () => {
     const crd = pos.coords;
 
     const response = await fetch(
-      `https://api.geoapify.com/v1/geocode/reverse?lat=${crd.latitude}&lon=${crd.longitude}&apiKey=a31b273f8aaa4af6848ef7a73cb7c3dc`,
+      `https://api.geoapify.com/v1/geocode/reverse?lat=${crd.latitude}&lon=${crd.longitude}&apiKey=a31b273f8aaa4af6848ef7a73cb7c3dc`
     );
     const result = await response.json();
 
     const weather = await getWeatherData(result.features[0].properties.city);
-    resetWeatherContent(result.features[0].properties.city, weather);
+    EventBus.emit('weather:update', {
+      city: result.features[0].properties.city,
+      weather,
+    });
     console.log(result);
   };
 
